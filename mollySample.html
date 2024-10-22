@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		
+		#pacman{
+			width:100px;
+			height:300px;
+			background-color:purple;
+		}
+
+		#coin{
+			width:20px;
+			height:20px;
+			background-color:gold;
+			border-radius:50%;
+			position:absolute;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div id="pacman"></div>
+
+	<div id="coin"></div>
+
+	<!-- Idea: it's locked before you drag the coininto the slot
+		Once you drag the coin into the slot, you can choose what you want to click on: journal entries, what you want to click on,
+
+		Insert to play text goes away. 
+
+		1. make it so that when click on coin it follows mouse-->
+
+		<script type="text/javascript">
+			
+			document.addEventListener("click", function(event){
+				console.log(event.clientX, event.clientY)
+				coin.style.left = event.clientX +"px"
+				coin.style.top = event.clientY+"px"
+
+			})
+
+		</script>
+
+</body>
+</html>
