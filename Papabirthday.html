@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<style type="text/css">
+
+.papas{
+height: 100px;
+width: 100px;
+background-color: darkgreen;
+display: inline-block;
+margin: 5px;
+
+}
+
+	</style>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+let counter =0;
+
+function makePapa(){
+
+counter=counter+1
+
+let papa = document.createElement("div")
+document.body.appendChild(papa)
+papa.classList.add("papas")
+// star.style.backgroundImage = "url("+counter+"png)"
+
+}
+
+
+setInterval(makePapa, 100)
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
