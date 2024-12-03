@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+	
+#square{
+
+width: 125px;
+height: 125px;
+background-color: darkgreen;
+border-radius: 35%;
+position:absolute;
+transition:1s;
+
+
+}
+
+#circle{
+	width: 100px;
+height: 100px;
+background-color: darkcyan;
+border-radius: 55%;
+position:absolute;
+transition:1s;
+}
+
+</style>
+
+</head>
+<body>
+<div id="square"></div>
+<div id="circle"></div>
+
+<script type="text/javascript">
+
+
+function move (){	
+
+let x = Math.random ()*1000
+let y = Math.random ()*1000
+
+
+square.style.left = x + "px"
+square.style.top = y + "px"
+
+
+circle.style.left = x*2 + "px"
+circle.style.top = x/2 + "px"
+}
+
+
+
+setInterval(move, 250)
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
