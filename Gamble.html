@@ -67,32 +67,64 @@ box1.style.backgroundImage=images[random1]
 box2.style.backgroundImage=images[random2]
 box3.style.backgroundImage=images[random3]
 
-if (random1==random2 && random2==random3){
- score = score + 100
- sb.innerText="!Jackpot! +$100 Your balance is "+ score 
+if(score<0){
+	alert("You lose :( Must reload page!")
 }
 
-else if (random1==random2){
- score = score +10
- sb.innerText="Not bad 2/3 +$10 Your balance is "+ score 
+if (random1==random2 && random2==random3)
+	if(random1==0 && random2==0 && random2==random3){
+	score = score + 77
+	sb.innerText = "Nice 7 JACKPOT +$77 Your balance is $"+ score}
+	// if(random1==6 && random2==6 && random2==random3){
+	// score = score + 500
+	// sb.innerText = "MAJOR JACKPOT +$500 Your balance is $"+ score}
+else{score = score + 100
+ sb.innerText="!Fruit Jackpot! +$100 Your balance is $"+ score 
+}
+
+else if (random1==random2)
+	if(random1==0 && random2==0){
+	score = score + 7 
+	sb.innerText = "Nice 2 7s +$7 Your balance is $"+ score}
+	// if(random1==6 && random2==6){
+	// score = score + 50
+	// sb.innerText = "Almost the major JACKPOT +$50 Your balance is $"+ score}
+else{score = score +10
+ sb.innerText="Not bad 2/3 Fruit +$10 Your balance is $"+ score 
 
 }
 
-else if (random2==random3){
- score = score + 10
- sb.innerText="Not bad 2/3 +$10 Your balance is "+ score 
+else if (random2==random3)
+	if(random2==0 && random3==0){
+	score = score + 7 
+	sb.innerText = "Nice 2 7s +$7 Your balance is $"+ score}
+	// if(random2==6 && random3==6){
+	// score = score + 50 
+	// sb.innerText = "Almost the major JACKPOT +$50 Your balance is $"+ score}
+else{score = score + 10
+ sb.innerText="Not bad 2/3 Fruit +$10 Your balance is $"+ score 
 }
 
 else if (random1==random3){
+	if(random1==0 && random3==0){
+	score = score + 7 
+	sb.innerText = "Nice 2 7s +$7 Your balance is $"+ score}
+	// if(random1==6 && random3==6){
+	// score = score + 50 
+	// sb.innerText = "Almost the major JACKPOT +$50 Your balance is $"+ score}
+else{
  score = score + 10
- sb.innerText="Not bad 2/3 +$10 Your balance is "+ score 
+ sb.innerText="Not bad 2/3 Fruit +$10 Your balance is $ "+ score 
+ }
 }
 
 else{
-	score = score- 15
- sb.innerText="!Nothing! -$15 Your balance is "+ score 
+	score = score- 12
+ sb.innerText="!Nothing! -$12 Your balance is $"+ score 
 
 }
+
+
 
 
 })
