@@ -38,13 +38,37 @@
 		1. make it so that when click on coin it follows mouse-->
 
 		<script type="text/javascript">
-			
-			document.addEventListener("click", function(event){
-				console.log(event.clientX, event.clientY)
+
+			let whatever = false
+
+			// coin.addEventListener("click", function(event){
+			// 	console.log(event.clientX, event.clientY)
+			// 	whatever = true
+
+			// 	if (whatever ==true){
+				
+			// 	}
+			// })
+
+			document.addEventListener("mousemove", function(){ 
+
+				coin.addEventListener("click", function(){
+					whatever = true})
+
+				if(whatever==true){
 				coin.style.left = event.clientX +"px"
 				coin.style.top = event.clientY+"px"
 
-			})
+				}
+
+				})
+
+
+			
+
+			
+			
+			
 
 		</script>
 

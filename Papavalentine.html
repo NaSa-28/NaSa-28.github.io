@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<style type="text/css">
+
+.papas{
+height: 450px;
+width: 450px;
+background-color: darkgreen;
+display: inline-block;
+margin: 5px;
+background-size:contain;
+background-position: center;
+
+}
+
+.rain{
+position: absolute;
+background-color: green;
+}
+
+	</style>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+let counter =0;
+
+function makePapa(){
+
+counter=counter+1
+
+let papa = document.createElement("div")
+document.body.appendChild(papa)
+papa.classList.add("papas")
+papa.style.backgroundImage = "url(Papa"+counter+".PNG)"
+
+if (counter ==6)
+{ counter = 0}
+
+}
+
+function makeRain(){
+	let raindrop = document.createElement("div")
+	document.body.appendChild(raindrop)
+	raindrop.classList.add("rain")
+
+	raindrop.style.height=25+"px"
+	raindrop.style.width= 5+"px"
+	raindrop.style.top=Math.random()*25+"px"
+	raindrop.style.left=Math.random()*1800+"px"
+	let r = Math.floor(Math.random()*255)
+	let b = Math.floor(Math.random()*255)
+	let g = Math.floor(Math.random()*255)
+
+	raindrop.style.backgroundColor="rgb("+r+","+g+","+b+")"
+
+	function fall(){
+		raindrop.style.top=parseInt(raindrop.style.top)+(Math.random()*100)+"px"
+		console.log(parseInt(raindrop.style.top))
+
+
+	}
+
+setInterval(fall,100)
+
+}
+
+
+
+setInterval(makePapa, 1000)
+
+for(let i=0; i<7500; i=i+1){
+	makeRain(i)
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
