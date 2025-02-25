@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .list {
+            display: grid;
+            grid-template-columns: repeat(5, 200px); 
+            grid-gap: 20px; 
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="list">
+    
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <script>
+ 
+        const squares = document.querySelectorAll('.square');
+        squares.forEach(square => {
+            let clickCount = 0;
+
+            square.addEventListener('click', () => {
+                clickCount++;
+
+                if (clickCount === 1) {
+                    square.style.backgroundColor = 'transparent';
+                } else if (clickCount === 2) {   
+                    square.style.backgroundColor = 'magenta';
+                } else if (clickCount === 3) {  
+                    square.style.backgroundColor = 'blue';
+                    clickCount = 0; // 
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
