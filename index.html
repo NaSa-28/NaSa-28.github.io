@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-
-
 <style type="text/css">
+
+	body{
+		cursor:none;
+	}
+
 #coinslot1{
 width:500px;
 height:675px;
-background-image:url(https://ih1.redbubble.net/image.1777365946.8559/fpp,large,lustre,wall_texture,product,750x1000.webp) ;
+background-image:url(coinslot.png) ;
 /*border-radius: 50%;*/
 /*top:100px;
 left:100px;*/
@@ -18,13 +19,15 @@ position:relative;
 left:100px;
 background-size:contain;
 background-repeat: no-repeat;
+cursor:none;
 
 }
 
 #coinslot2{
+	cursor:none;
 width:500px;
 height:675px;
-background-image:url(https://ih1.redbubble.net/image.1777365946.8559/fpp,large,lustre,wall_texture,product,750x1000.webp) ;
+background-image:url(coinslot.png) ;
 /*border-radius: 50%;*/
 /*top:100px;*/
 left:100px;
@@ -40,10 +43,10 @@ background-repeat: no-repeat;
 width:75px;
 height:150px;
 background-image: url(coin.png);
-display:inline-block;
-position:relative;
+position:absolute;
 background-size:contain;
 background-repeat: no-repeat;
+/*z-index: ;*/
 
 
 }
@@ -71,6 +74,19 @@ background-repeat: no-repeat;
 <div id="coin"></div>
 
 
+
+<script type="text/javascript">
+
+
+document.addEventListener("mousemove", function (event){
+	console.log(event.clientX, event.clientY);
+	coin.style.left = event.clientX+50 + "px"
+	coin.style.top = event.clientY-25 + "px"
+
+})
+
+
+</script>
 
 
 </body>
