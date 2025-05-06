@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+
+     body{
+    margin:0px;
+    background-color:black;
+
+        .star{
+
+        background-size:contain;
+      width:60px;
+      height:60px;
+      background-image:url(star1.png);
+      transition:.5s;
+      margin:10px;
+      background-position:center;
+      background-repeat: no-repeat;
+      position:absolute;
+
+
+    }
+
+    .planets{
+
+  
+      background-size:contain;
+      width:200px;
+      height:200px;
+      background-image:url(mars.png);
+      transition:.5s;
+      margin:10px;
+      background-position:center;
+      background-repeat: no-repeat;
+      position:absolute;
+
+    }
+
+    .shootingstars{
+
+
+      background-size:contain;
+      width:200px;
+      height:50px;
+      background-image:url(shootingstar1.png);
+      transition:.5s;
+      margin:10px;
+      background-position:center;
+      background-repeat: no-repeat;
+      position:absolute;
+
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+<!-- <div class="star"></div> -->
+
+  <audio id="sound" src="pew.wav"> </audio>
+
+
+
+
+
+
+    <p>stars gone:</p><input id="input"></input>
+
+
+
+
+    <script type="text/javascript">
+      var pew = document.getElementById('sound');
+    var input = document.getElementById('input');
+        var x = 0;
+
+
+// this function createGalaxy creates the stars and also has two functions inside of it. One function inside of it changes the position every 1500 when we run it in setInterval
+    function createGalaxy() {
+        var galaxy = document.createElement('div');
+        galaxy.classList.add("star");
+
+        function changePosition() {
+            galaxy.style.left = 1000 * Math.random() + "px";
+            galaxy.style.top = 800 * Math.random() + "px";
+      };
+
+      changePosition()
+     document.body.appendChild(galaxy);
+
+
+        galaxy.addEventListener("click", function() {
+            console.log("hi");
+            x = x + 1;
+            input.value = x;
+            galaxy.classList.remove("star");
+         
+
+
+        }) //event listener for every single star which is part of the recipe
+
+        setInterval(changePosition, 1500)
+    }; //end of createGalaxy
+
+
+    setInterval(createGalaxy, 2500);
+
+
+
+
+
+
+     function createPlanet() {
+        var planet = document.createElement('div');
+        document.body.appendChild(planet);
+        planet.classList.add("planets");
+
+        function changePosition() {
+            planet.style.left = 1000 * Math.random() + "px";
+            planet.style.top = 800 * Math.random() + "px";
+      };
+
+
+        planet.addEventListener("click", function() {
+            console.log("hi");
+            x = x + 1;
+            input.value = x;
+            planet.classList.remove("planets");
+         
+
+
+        }) 
+
+        setInterval(changePosition, 1000)
+    }; 
+
+
+
+    setInterval(createPlanet, 3000);
+
+
+         function createShootingstar() {
+        var shootingstar = document.createElement('div');
+        document.body.appendChild(shootingstar);
+        shootingstar.classList.add("shootingstars");
+
+        function changePosition() {
+            shootingstar.style.left = 1000 * Math.random() + "px";
+            shootingstar.style.top = 800 * Math.random() + "px";
+      };
+
+
+        shootingstar.addEventListener("click", function() {
+            console.log("hi");
+            x = x + 1;
+            input.value = x;
+            shootingstar.classList.remove("shootingstars");
+         
+
+
+        }) 
+
+        function removeClass(){
+                      shootingstar.classList.remove("shootingstars");
+
+        }
+
+        setTimeout(removeClass, 3000)
+
+        setInterval(changePosition, 1500)
+    }; 
+
+
+
+    setInterval(createShootingstar,10000 );
+
+
+
+    //score = 100 (doesn't matter)the game ends --- on the time, the time is your final score --> or if easier the time ends the game and the score is your score
+    //also add multiple types of stars with diff point values and behaviors
+
+
+    </script>
+</body>
+
+</html>
