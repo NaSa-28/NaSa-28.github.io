@@ -5,7 +5,9 @@
     <title></title>
     <style>
 
- 
+      input{
+        z-index: 10000;
+      }
 
      body{
     margin:0px;
@@ -26,6 +28,20 @@
 
     }
 
+
+    #telescope{
+      width:1200px;
+      height:620px;
+ /*     opacity:0.5;
+      background-color:green;*/
+       background-image:url(hole.png);
+       background-position:center;
+       background-repeat: no-repeat;
+       position:absolute;
+       background-size:contain;
+       z-index: 1000;
+        
+    }
 
     .planets{
 
@@ -66,7 +82,16 @@
       color: white;
     }
     
-   
+   /* #telescope{
+      width:4000px;
+      height:820px;
+
+       background-image:url(hole.png);
+       background-position:center;
+       background-repeat: no-repeat;
+       position:absolute;
+       background-size:contain;
+        
     }*/
 
 
@@ -74,7 +99,7 @@
 </head>
 
 <body>
-
+   <div id="telescope"></div>
  
   <center>
 <div id="starting">Starting in...</div>
@@ -87,8 +112,6 @@
 
     <p>stars gone:</p>
     <input id="input"></input>
-
-    <a href="telescope.html">Telescope Mode</a>
 
 
 
@@ -257,7 +280,34 @@
 
 
 
+telescope.style.left="0px"
 
+telescope.style.top="0px"
+
+document.addEventListener("keydown", function(event){
+if (event.keyCode==37){
+console.log(event.keyCode)
+telescope.style.left=parseInt(telescope.style.left)-40+"px"
+console.log(telescope.style.left)
+}
+
+if (event.keyCode==39){
+console.log(event.keyCode)
+telescope.style.left=parseInt(telescope.style.left)+40+"px"
+}
+
+if (event.keyCode==38){
+console.log(event.keyCode)
+telescope.style.top=parseInt(telescope.style.top)-40+"px"
+}
+
+
+if (event.keyCode==40){
+console.log(event.keyCode)
+telescope.style.top=parseInt(telescope.style.top)+40+"px"
+}
+
+    })
   </script>
 
 
